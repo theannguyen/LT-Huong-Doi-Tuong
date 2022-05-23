@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<canvas id="myCanvas" width="1368px" height="400px"></canvas>
+<p id="result"></p>
+<script>
+    function Rectangle(width, height) {
+        this.width = width;
+        this.height = height;
+    }
+    Rectangle.prototype.display = function () {
+        let canvas = document.getElementById("myCanvas");
+        let context = canvas.getContext("2d");
+        context.rect(20, 20, this.width, this.height);
+        context.stroke();
+    }
+    function createRec() {
+        let rec = new Rectangle(50,80);
+        rec.display();
+    }
+    createRec();
+</script>
 </body>
 </html>
